@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN apk add curl git autoconf automake g++ libtool make openssl-dev pkgconf protoc
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup.sh && sh ./rustup.sh -y
-RUN export PATH="$HOME/.cargo/bin:$PATH"
+ENV PATH "/root/.cargo/bin:${PATH}"
 
 # Recompile the newest version of ZMQ
 RUN mkdir libs && cd libs && \
