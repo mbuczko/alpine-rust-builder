@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add rust cargo openssl-dev curl autoconf automake libtool g++ make pkgconf
+RUN apk add git rust cargo openssl-dev curl autoconf automake libtool g++ make pkgconf
 
 # Recompile the newest version of ZMQ
 RUN mkdir libs && cd libs && \
