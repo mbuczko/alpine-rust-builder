@@ -1,5 +1,5 @@
 # What it is?
-It's a Rust apps builder based on Alpine (edge) container. This guarantees as small output container as possible for today.
+It's a Rust apps builder based on Alpine (latest) container. This guarantees as small output container as possible for today.
 
 # What's inside
 Standart build chain (autoconf, automake, libtool, ...) recompiled [ZeroMQ](zeromq.org) and [Litestream](https://litestream.io/)

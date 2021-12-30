@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:latest
 
 RUN apk add rust cargo openssl-dev curl autoconf automake libtool g++ make pkgconf
 
