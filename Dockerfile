@@ -8,7 +8,7 @@ RUN mkdir libs && cd libs && \
     tar xzf zeromq-4.3.4.tar.gz && cd zeromq-4.3.4 && \
     ./autogen.sh && \
     ./configure --disable-dependency-tracking --without-docs && \
-    make && make install
+    make && make install && cd .. && rm zeromq-4.3.4.tar.gz && rm -rf zeromq-4.3.4
 
 # Download the static build of Litestream directly into the path & make it executable.
 # This is done in the builder and copied as the chmod doubles the size.
