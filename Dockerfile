@@ -1,4 +1,5 @@
 FROM alpine:latest
+ARG S6_OVERLAY_VERSION=3.1.4.2
 
 RUN apk add curl git autoconf automake g++ libtool libzmq make openssl-dev pkgconf protoc
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup.sh && sh ./rustup.sh -y --default-toolchain nightly
@@ -11,5 +12,5 @@ RUN tar -C /tmp -xzf /tmp/litestream.tar.gz
 
 # Download the s6-overlay for process supervision.
 # This is done in the builder to reduce the final build size.
-ADD https://github.com/just-containers/s6-overlay/releases/download/v3.1.4.2/s6-overlay-amd64-installer /tmp/
-RUN chmod +x /tmp/s6-overlay-amd64-installer
+ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz /tmp
+ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-x86_64.tar.xz /tmp
