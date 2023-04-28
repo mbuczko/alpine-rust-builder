@@ -11,5 +11,5 @@ RUN tar -C /tmp -xzf /tmp/litestream.tar.gz
 
 # Download the s6-overlay for process supervision.
 # This is done in the builder to reduce the final build size.
-ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.3/s6-overlay-amd64-installer /tmp/
+ADD https://github.com/just-containers/s6-overlay/releases/download/v3.1.4.2/s6-overlay-amd64-installer /tmp/
 RUN chmod +x /tmp/s6-overlay-amd64-installer
